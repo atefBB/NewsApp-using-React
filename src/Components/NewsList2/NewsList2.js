@@ -14,11 +14,11 @@ function NewsList2(props) {
   const [cat, setCat] = useState(null);
   
 
-  let url1 = `https://cors-anywhere.herokuapp.com/https://www.abplive.com/home/feed`;
+  let url1 = `https://cors.bridged.cc/https://www.abplive.com/home/feed`;
   if (cat === undefined || cat === null) {
-    url1 = `https://cors-anywhere.herokuapp.com/https://www.abplive.com/home/feed`;
+    url1 = `https://cors.bridged.cc/https://www.abplive.com/home/feed`;
   } else {
-    url1 = `https://cors-anywhere.herokuapp.com/https://www.abplive.com${cat}`;
+    url1 = `https://cors.bridged.cc/https://www.abplive.com${cat}`;
   }
 
   useEffect(() => {
