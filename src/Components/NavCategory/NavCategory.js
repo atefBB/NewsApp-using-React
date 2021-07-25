@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import { NavLink } from "react-router-dom";
+
 import "./NavCategory.css";
 
 export class NavCategory extends Component {
@@ -10,16 +10,10 @@ export class NavCategory extends Component {
     this.state = {
       category: [
         { type: "Home", categoryUrl: "/home/feed" },
-        { type: "India News", categoryUrl: "/news/india/feed" },
         { type: "World News", categoryUrl: "/news/world/feed" },
-        { type: "Entertainment", categoryUrl: "/entertainment/bollywood/feed" },
-        { type: "Crime", categoryUrl: "/news/crime/feed" },
-        { type: "Sports", categoryUrl: "/sports/feed" },
-        { type: "Buisness", categoryUrl: "/business/feed" },
         { type: "Health", categoryUrl: "/lifestyle/health/feed" },
         { type: "Technology", categoryUrl: "/technology/feed" },
         { type: "COVID-19", categoryUrl: "/latest-news/covid-19/feed" },
-        { type: "Coronavirus", categoryUrl: "/latest-news/coronavirus/feed" },
       ],
       selectedCategory: "/home/feed",
     };
@@ -30,11 +24,10 @@ export class NavCategory extends Component {
       selectedCategory: url,
     });
   };
+
   render() {
-   
-    let cat = this.state.category.map((c) => (
+    let categories = this.state.category.map((c) => (
       <li key={c.type}>
-     
         <NavLink
           onClick={this.props.clicked}
           to={{
@@ -46,9 +39,10 @@ export class NavCategory extends Component {
         </NavLink>
       </li>
     ));
+
     return (
       <div>
-        <ul className="ullist">{cat}</ul>
+        <ul className="ullist">{categories}</ul>
 
         {/* <Newslist selectedCategory={this.state.selectedCategory} /> */}
       </div>
@@ -57,4 +51,3 @@ export class NavCategory extends Component {
 }
 
 export default NavCategory;
-
